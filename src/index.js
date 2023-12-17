@@ -4,13 +4,13 @@ import { PORT } from "./constants.js";
 import { app } from "./app.js";
 
 dotenv.config({
-  path: "./env",
+  path: "./env",    
 });
 
 connectDB()
   .then(() => {
     app.listen(PORT || 8000, () => {
-      `Server started on port ${PORT}`
+      console.log(`Server started on port ${PORT}`)
     })
   })
   .catch((error) => console.log("MONGODB connection failed !!", error));
